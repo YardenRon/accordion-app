@@ -1,4 +1,6 @@
-const data = [
+import DataItem from "./models/data-item";
+
+const data: DataItem[] = [
     {
       id  : '1',
       question: "What are accordion components?",

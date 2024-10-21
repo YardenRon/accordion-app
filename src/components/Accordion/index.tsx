@@ -1,5 +1,6 @@
 import { useState } from "react";
 import data from "../../data";
+import "./styles.scss";
 
 const Accordion = () => {
     const [selected, setSelected] = useState<string |null>(null);
@@ -15,10 +16,10 @@ const Accordion = () => {
                 {
                     data && data.length > 0? (
                         data.map(dataItem => (
-                            <div className="item">
+                            <div className="item" key={dataItem.id}>
                                 <div className="title" onClick={() => onTitleClick(dataItem.id)}>
+                                    <span className={selected === dataItem.id? "bottom-arrow" : "right-arrow"}></span>
                                     <h3> {dataItem.question} </h3>
-                                    <span> + </span>
                                 </div>
                                 {
                                     selected === dataItem.id? (
